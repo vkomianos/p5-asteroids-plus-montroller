@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Asteroids P5 Game</title>
+	
+	<script>
+	
+		let counter = 0;
+		
+		if (window.DeviceOrientationEvent) 
+		{
+			window.addEventListener('deviceorientation', handleOrientation);
+			console.log("Device Orientation is enabled");
+		} 
+		else 
+		{
+			console.log("Sorry, your browser doesn't support Device Orientation");
+			document.getElementById('x').innerHTML = "Sorry, your browser doesn't support Device Orientation";
+		}
+	
+		function handleOrientation(event) 
+		{
+			document.getElementById('x').innerHTML = 'Orientation_a ' + event.alpha;
+			document.getElementById('y').innerHTML = 'Orientation_b ' + event.beta;
+			document.getElementById('z').innerHTML = 'Orientation_c ' + event.gamma;
+			
+			document.getElementById('counter').innerHTML = 'Counter ' + counter++;
+			
+			console.log(event);
+		}
+	
+		 
+	</script>
+	
+	
+</head>
+
+<body onload=""> 
+	
+	<p id='x'>
+	</p>
+	
+	<p id='y'>
+	</p>
+	
+	<p id='z'>
+	</p>
+	
+	<p id='counter'>
+	</p>
+	
+
+
+
+</body>
+
+
+</html>
